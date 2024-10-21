@@ -42,6 +42,8 @@ The switch should now be using the secret password whenever Privileged EXEC mode
 - Go into Privileged EXEC mode and run the 'write' command.
 - To confirm it's saved, run 'sh(ow) start(up-config)'. It should match the 'sh(ow) run(ning-config)' output.
 
+This section will be replicated across all switches. Setting the 'password' step can be skipped and go straight to the 'secret' as it provides stronger hashing algorithm by default.
+
 ### Configuring IP Addresses
 
 ## Summary
