@@ -46,4 +46,6 @@ This section will be replicated across all switches. Setting the 'password' step
 
 ### Configuring IP Addresses
 
+### Configure Wireless Router
+
 ## Summary
