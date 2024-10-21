@@ -21,6 +21,7 @@ Insert image here
 - Type 'hostname MySW' to change the name of the switch.
 
 ### Securing Switch with Password and Secret
+To prevent anyone from directly accessing the Privileged EXEC mode, there must be a password to provide a layer of security. Allowing only the network administrator access to it.
 - Click on the switch device and go to the CLI tab.
 - Type 'en(able)' to go into Privileged EXEC mode, then type 'conf(igure) t(erminal)' to go into Global Configuration Mode.
 - Type 'enable pass(word) MySwitchUser' to set the password of the switch.
@@ -36,6 +37,10 @@ While the password has now been encrypted with the ;7; indicating the type of en
 - Run the 'enable secret MySWUser' command to set the 'secret' password.
 - Type 'exit' twice to go back to the User EXEC mode and try to enter Privileged EXEC mode to test the 'secret' password.
 - When in Privileged EXEC mode and run 'sh(ow) run(ning-config)' command again to confirm that the password and secret password are both encrypted. Both should be a ciphertext.
+
+The switch should now be using the secret password whenever Privileged EXEC mode is being accessed. This also has the '5' when running 'sh(ow) run(ning-config)' command, indicating it's using the stronger MD5 hashing algorithm. The last step is to save the running configuration to the startup configuration.
+- Go into Privileged EXEC mode and run the 'write' command.
+- To confirm it's saved, run 'sh(ow) start(up-config)'. It should match the 'sh(ow) run(ning-config)' output.
 
 ### Configuring IP Addresses
 
