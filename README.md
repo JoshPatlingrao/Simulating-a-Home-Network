@@ -46,6 +46,12 @@ This section will be replicated across all switches. Setting the 'password' step
 
 ### Configuring IP Addresses
 
-### Configure Wireless Router
+### Configure a Router
+- Do the same steps for 'Setting Hostname for Switch' to set the hostname of the router.
+- Go to Privileged EXEC mode and type 'show ip interface brief' to view the current setup of the interfaces.
+- Run the 'int(erface) giga(bitethernet) 0/0' to select the 0 port, then 'ip ad(dress) 198.132.075.1 255.255.255.0' to set the IP address for the port and the network mask.
+- Run 'desc(ription) ## To Wireless Router ##' to indicate where the port is connected.
+- Run 'no shutdown' to enable the interface.
+- Switch to GigaBit Interface 0/1 using 'int(erface) g0/1' and repeat the steps until G0/2.
 
 ## Summary
