@@ -50,7 +50,7 @@ The device IP needs to be configured so it can be referred to using layer 3 addr
 - Select the 'FastEthernet0' tab and eneter the IPv4 address, keeping the network section the same and setting any number between 0 and 255 as the machine number.
   - The .0 is for the network address while the .255 is for the broadcast address.
 - Set the default gateway to match the router port IP address it is connected to directly or through a switch.
-  - This allows the ARP packet to be sent through the 'gateway' router to request for the MAC address that corresponds to the destination IP address in other subnets.
+  - This allows the ARP packet to be sent through the 'gateway' router to request for the MAC address that corresponds to the destination IP address to networks outside the LAN.
 - To confirm that the address is working try to ping other end point devices from different subnets. If configured correctly, the pinged device should send an ICMP reply packet.
 
 ### Configure a Router
