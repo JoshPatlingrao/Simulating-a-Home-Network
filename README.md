@@ -60,6 +60,7 @@ The device IP needs to be configured so it can be referred to using layer 3 addr
 - Run 'desc(ription) ## To Wireless Router ##' to indicate where the port is connected.
 - Run 'no shutdown' to enable the interface.
 - Switch to GigaBit Interface 0/1 using 'int(erface) g0/1' and repeat the steps until G0/2.
+- Run 'write' in Privileged EXEC mode to save configuration.
 
 ### Manually Configure Interfaces
 Modern CISCO devices would automatically configure port settings based on the interface it's connected to, but there may be times where the port needs to be configured manually.
@@ -68,6 +69,7 @@ Modern CISCO devices would automatically configure port settings based on the in
 - Run command 'speed 1000' top set the speed to 1000 megabits, equivalent to the Gigabit speed the ports are caopable of.
 - Run command 'duplex full' since switches are capable of running half, rather than a hub which can only use half duplex.
   - This specific configuration will cauise the protocol status to be down due to the mismatch. The MySwitch G0/1 port doesn't automatically update and needs to be configured manually to match the full duplex of the G0/0 interface of the router.
+- Run 'write' in Privileged EXEC mode to save configuration.
 
 ### Disable Unused Interfaces
 It is good security practise to disable ports/interfaces that are not in use to prevent attackers from using them to their advantage.
@@ -77,4 +79,6 @@ It is good security practise to disable ports/interfaces that are not in use to 
 - Enter reason for being disabled, 'desc ## Not in use ##'
 - Run 'shutdown' to disable the specified range of interfaces.
 - Repeat these steps for G0/2 port.
+- Run 'write' in Privileged EXEC mode to save configuration.
+
 ## Summary
