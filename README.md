@@ -32,7 +32,7 @@ Running the 'sh(ow) run(ning-config)' command will display the current settings 
 - Run the 'service pass(word-encryption)' command.
 - Type 'exit' to go back to Privileged EXEC mode and run 'sh(ow) run(ning-config)' command again to confirm that the password has now been encrypted. It should be a ciphertext.
 
-While the password has now been encrypted with the ;7; indicating the type of encryption used. It can still be cracked by attackers. To provide another layer of security we must configure a more secure 'secret' password which has stronger MD5 encryption.
+While the password has now been encrypted with the '7' indicating the type of encryption used. It can still be cracked by attackers. To provide another layer of security we must configure a more secure 'secret' password which has stronger MD5 encryption.
 - Go into Global Configuration mode.
 - Run the 'enable secret MySWUser' command to set the 'secret' password.
 - Type 'exit' twice to go back to the User EXEC mode and try to enter Privileged EXEC mode to test the 'secret' password.
@@ -44,7 +44,14 @@ The switch should now be using the secret password whenever Privileged EXEC mode
 
 This section will be replicated across all switches. Setting the 'password' step can be skipped and go straight to the 'secret' as it provides stronger hashing algorithm by default.
 
-### Configuring IP Addresses
+### Configuring IP Addresses for Host Devices
+The device IP needs to be configured so it can be referred to using layer 3 address rather than resorting to MAC addresses
+- Click on the end point device and go to the 'Config' tab.
+- Select the 'FastEthernet0' tab and eneter the IPv4 address, keeping the network section the same and setting any number between 0 and 255 as the machine number.
+  - The .0 is for the network address while the .255 is for the broadcast address.
+- Set the default gateway to match the router port IP address it is connected to directly or through a switch.
+  - This allows the ARP packet to be sent through the 'gateway' router to request for the MAC address that corresponds to the destination IP address in other subnets.
+- To confirm that the address is working try to ping other end point devices from different subnets. If configured correctly, the pinged device should send an ICMP reply packet.
 
 ### Configure a Router
 - Do the same steps for 'Setting Hostname for Switch' to set the hostname of the router.
@@ -54,4 +61,20 @@ This section will be replicated across all switches. Setting the 'password' step
 - Run 'no shutdown' to enable the interface.
 - Switch to GigaBit Interface 0/1 using 'int(erface) g0/1' and repeat the steps until G0/2.
 
+### Manually Configure Interfaces
+Modern CISCO devices would automatically configure port settings based on the interface it's connected to, but there may be times where the port needs to be configured manually.
+- Select the router and go into Global Configuration mode.
+- Select port G0/0. In the case of this project, both MySwitch and Router are connected through their GigaBit ports.
+- Run command 'speed 1000' top set the speed to 1000 megabits, equivalent to the Gigabit speed the ports are caopable of.
+- Run command 'duplex full' since switches are capable of running half, rather than a hub which can only use half duplex.
+  - This specific configuration will cauise the protocol status to be down due to the mismatch. The MySwitch G0/1 port doesn't automatically update and needs to be configured manually to match the full duplex of the G0/0 interface of the router.
+
+### Disable Unused Interfaces
+It is good security practise to disable ports/interfaces that are not in use to prevent attackers from using them to their advantage.
+- Go to MySW and go to CLI tab.
+  - In its current state the only interfaces that are in use are F0/1, F0/2, F0/3 and G0/1.
+- Go into Global Configuration mode and run command 'int(erface) range f0/4 - 24' to simultaneously access all fast ports that are not in use.
+- Enter reason for being disabled, 'desc ## Not in use ##'
+- Run 'shutdown' to disable the specified range of interfaces.
+- Repeat these steps for G0/2 port.
 ## Summary
