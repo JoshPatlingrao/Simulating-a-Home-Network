@@ -81,4 +81,31 @@ It is good security practise to disable ports/interfaces that are not in use to 
 - Repeat these steps for G0/2 port.
 - Run 'write' in Privileged EXEC mode to save configuration.
 
+### Subnetting
+
+198.132.221.0/24
+Parent's Network has 5 host devices.
+Will use a 198.132.221.0/29, giving 8 addresses and 32 subnets
+network address: 198.132.221.0
+broadcast address: 198.132.221.7
+5x host devices: 198.132.221.1 - .5
+router address: 198.132.221.6
+subnet mask: 255.255.255.248
+
+My Network has 3 host devices.
+Will use a 198.132.221.8/29, giving 8 addresses and 32 subnets
+network address: 198.132.221.8
+broadcast address: 198.132.221.15
+3x host devices: 198.132.221.9 - .11
+router address: 198.132.221.14
+subnet mask: 255.255.255.248
+
+Sister's network has 1 host device.
+Will use a 198.132.221.16/30, giving 4 addresses and 64 subnets
+network address: 198.132.221.16
+broadcast address: 198.132.221.19
+1x host devices: 198.132.221.17
+router address: 198.132.221.18
+subnet mask: 255.255.255.252
+
 ## Summary
