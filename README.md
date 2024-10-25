@@ -17,16 +17,13 @@ The purpose of this project is to demonstrate my understanding of Cisco Packet T
 - Cisco Packet Tracer
 
 ## Steps
-
-### Setting Router Password
-
 ### Setting Hostname for Switch
 Insert image here
 - Click on the switch device and go to the CLI tab.
 - Type 'en(able)' to go into Privileged EXEC mode, then type 'conf(igure) t(erminal)' to go into Global Configuration mode.
 - Type 'hostname MySW' to change the name of the switch.
 
-### Securing Switch with Password and Secret
+### Securing Router/Switch with Password and Secret
 To prevent anyone from directly accessing the Privileged EXEC mode, there must be a password to provide a layer of security. Allowing only the network administrator access to it.
 - Click on the switch device and go to the CLI tab.
 - Type 'en(able)' to go into Privileged EXEC mode, then type 'conf(igure) t(erminal)' to go into Global Configuration Mode.
