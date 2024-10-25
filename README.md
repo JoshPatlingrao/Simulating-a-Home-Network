@@ -85,30 +85,30 @@ It is good security practise to disable ports/interfaces that are not in use to 
 - Run 'write' in Privileged EXEC mode to save configuration.
 
 ### Subnetting
+Subnetting is crucial in setting up a network as it allows an efficient way of distributing IP addresses across multiple network and host devices based on the size of the subnet.
+The subnet being used in this project will be 198.132.221.0/24. It's a home network that's comparable to a small business so a Class-C network will suffice. 
 
-198.132.221.0/24
-Parent's Network has 5 host devices.
-Will use a 198.132.221.0/29, giving 8 addresses and 32 subnets
-network address: 198.132.221.0
-broadcast address: 198.132.221.7
-5x host devices: 198.132.221.1 - .5
-router address: 198.132.221.6
-subnet mask: 255.255.255.248
+The Parent's Network is the largest so it will be the first to be calculated. The network requires 6 usables addresses, 5 for host devices and 1 for router gateway address. The appropriate prefix would be 198.132.221.0/29, as it will provide 8 addresses.
+- Network Address: 198.132.221.0
+- Broadcast Address: 198.132.221.7
+- Host Device Addresses: 198.132.221.1 - .5
+- Router Gateway Address: 198.132.221.6
+- Subnet Mask: 255.255.255.248
 
-My Network has 3 host devices.
-Will use a 198.132.221.8/29, giving 8 addresses and 32 subnets
-network address: 198.132.221.8
-broadcast address: 198.132.221.15
-3x host devices: 198.132.221.9 - .11
-router address: 198.132.221.14
-subnet mask: 255.255.255.248
+The My Network is the second largest so it's the second to be calculated. The network requires 4 usables addresses, 3 for host devices and 1 for router gateway address. The appropriate prefix would be 198.132.221.8/29, as it will provide 8 addresses.
+- Network Address: 198.132.221.8
+- Broadcast Address: 198.132.221.15
+- Host Device Addresses: 198.132.221.9 - .11
+- Router Gateway Address: 198.132.221.14
+- Subnet Mask: 255.255.255.248
 
-Sister's network has 1 host device.
-Will use a 198.132.221.16/30, giving 4 addresses and 64 subnets
-network address: 198.132.221.16
-broadcast address: 198.132.221.19
-1x host devices: 198.132.221.17
-router address: 198.132.221.18
-subnet mask: 255.255.255.252
+The Sister's network is the smallest so it's the last to be calculated. The network requires 2 usables addresses, 1 for host devices and 1 for router gateway address. The appropriate prefix would be 198.132.221.16/30, as it will provide 4 addresses.
+- Network Address: 198.132.221.16
+- Broadcast Address: 198.132.221.19
+- Host Device Addresses: 198.132.221.17
+- Router Gateway Address: 198.132.221.18
+- Subnet Mask: 255.255.255.252
+
+## Problems Encountered
 
 ## Summary
