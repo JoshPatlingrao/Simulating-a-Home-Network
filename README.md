@@ -1,11 +1,17 @@
 # Simulating-a-Home-Network
 
 ## Objective
-The 
-Any passwords used in this project is merely for the demonstration of my knowledge and understanding of Cisco Packet Tracer and should not be practised on real machines.
-Words in brackets indicate the full name of the command that's otherwise been typed in shorthand form.
+The purpose of this project is to demonstrate my understanding of Cisco Packet Tracer, my understanding of basic network security and understanding of subnetting.
+
+### Project Notes
+- Any passwords used in this project is merely for the demonstration of my knowledge and understanding of Cisco Packet Tracer and should not be practised on real machines.
+- Words in brackets indicate the full name of the command that's otherwise been typed in shorthand form.
 
 ### Skills Learned
+- Setting hostname and security passwords for routers and switches.
+- Configuring router IP addresses, interface bandwidth and duplex mode.
+- Disabling unused interface on routers and switches.
+- Using subnetting to efficiently distribute IP addresses among network and host devices. 
 
 ### Tools Used
 - Cisco Packet Tracer
