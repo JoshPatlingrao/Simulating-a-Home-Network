@@ -1,7 +1,7 @@
 # Simulating-a-Home-Network
 
 ## Objective
-The purpose of this project is to demonstrate my understanding of Cisco Packet Tracer, my understanding of basic network security and understanding of subnetting.
+The purpose of this project is to demonstrate my understanding of Cisco Packet Tracer, basic network security and subnetting to efficiently distribute IP addresses.
 
 ### Project Notes
 - Any passwords used in this project is merely for the demonstration of my knowledge and understanding of Cisco Packet Tracer and should not be practised on real machines.
