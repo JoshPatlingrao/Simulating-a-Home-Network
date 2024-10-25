@@ -109,6 +109,10 @@ The Sister's network is the smallest so it's the last to be calculated. The netw
 - Router Gateway Address: 198.132.221.18
 - Subnet Mask: 255.255.255.252
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8167e232-7f86-4d9b-a187-2173b5509e6b">
+</p>
+
 ## Problems Encountered
 
 ## Summary
