@@ -18,7 +18,6 @@ The purpose of this project is to demonstrate my understanding of Cisco Packet T
 
 ## Steps
 ### Setting Hostname for Switch
-Insert image here
 - Click on the switch device and go to the CLI tab.
 - Type 'en(able)' to go into Privileged EXEC mode, then type 'conf(igure) t(erminal)' to go into Global Configuration mode.
 - Type 'hostname MySW' to change the name of the switch.
