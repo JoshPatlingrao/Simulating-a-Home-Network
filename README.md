@@ -8,6 +8,7 @@ The purpose of this project is to demonstrate my understanding of Cisco Packet T
 - Words in brackets indicate the full name of the command that's otherwise been typed in shorthand form.
 
 ### Skills Learned
+- Configuring CISCO switches and routers.
 - Setting hostname and security passwords for routers and switches.
 - Configuring router IP addresses, interface bandwidth and duplex mode.
 - Disabling unused interface on routers and switches.
@@ -152,3 +153,31 @@ To change the VLAN names
 - Type 'vl(an) 20', enter it, then type 'name MY'.
 - Type 'vl(an) 30', enter it, then type 'name SISTER'.
 - Confirm connectivity by pinging devices across other networks. If devices can ping each other, run 'write' to save running configuration as start-up configuration.
+
+### Configure VLANs (Trunk Ports)
+For this section of the project, the network has modified where now all VLANs share the same interface to connect to the router. This is a way to save up on router interfaces, multiple VLANs could quickly use up the interface ports.
+
+All VLANs will now use interface G0/1(SW) -> G0/0(Router).
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/c2e10ec1-2145-41e1-bcfe-469668c30b2a">
+</p>
+
+Configure the Switch
+- Go into Global Configuration mode and run the command 'int(erface) g0/1' to select the interface.
+- Configure the select interface as a trunk port with command 'sw(itchport) mo(de) tr(unk)'.
+- Configure the VLANs that can use the trunk port, run command 'sw(itchport) tr(unk) all(owed) 10, 20, 30. The 10, 20 and 30 are the VLAN numbers representing the networks.
+- Set native VLAN to 1001, 'sw(itchport) tr(unk) native vlan 1001'.
+- Turn off the previously used ports, select those ports with 'int(erface) range f0/24, g0/2'.
+- Run 'shutdown' to disable the ports.
+- Run 'write' command to save to start-up configuration.
+
+Configure the Router
+- Go into Global Configuration mode and remove the IP addresses associated with each port. Run 'int(erface) range g0/0 - 2', then run 'no ip address'
+- Create a sub-interface with command 'int g0/0.10'. For convenience, this will match the VLAN number of the Parent network and the same wil apply for the other networks.
+- Use the 802.1Q protocol to encapsulate the sub-interface. This is used to tag traffic so it can distinguish which VLAN it belongs to. Run the command 'enc(apsulation) dot1q 10'.
+- Configure the gateway IP address for Parent network on it, ruin 'ip ad(dress) 198.132.221.6 255.255.255.248'.
+- Repeat the steps for other VLANs, using the VLAN codes 20 and 30.
+- Turn off the previously used ports, select those ports with 'int(erface) range g0/1, g0/2'.
+- Run 'shutdown' to disable th eunused ports
+- Run 'write' command to save to start-up configuration.
