@@ -12,7 +12,8 @@ The purpose of this project is to demonstrate my understanding of Cisco Packet T
 - Setting hostname and security passwords for routers and switches.
 - Configuring router IP addresses, interface bandwidth and duplex mode.
 - Disabling unused interface on routers and switches.
-- Using subnetting to efficiently distribute IP addresses among network and host devices. 
+- Using subnetting to efficiently distribute IP addresses among network and host devices.
+- Setting up VLANs using access and trunk ports.
 
 ### Tools Used
 - Cisco Packet Tracer
