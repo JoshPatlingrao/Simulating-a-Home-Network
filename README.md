@@ -182,3 +182,5 @@ Configure the Router
 - Turn off the previously used ports, select those ports with 'int(erface) range g0/1, g0/2'.
 - Run 'shutdown' to disable th eunused ports
 - Confirm connectivity by pinging devices across other networks. If devices can ping each other, run 'write' to save running configuration as start-up configuration.
+
+### Comparison: Access Ports vs Trunk Ports
