@@ -129,3 +129,26 @@ Each subnet is connected to the router through these ports:
   <img src="https://github.com/user-attachments/assets/78fe24ba-5cfa-4f5e-9087-6d537b73bc19">
 </p>
 
+Select the Switch and follow the steps.
+
+Configure Parent VLAN
+- Go into Global Configuration mode and enter the ports associated with the Parent network. Use the command 'int(erface) range f0/1 - 5, g0/1'.
+- Configure the select interfaces as access ports with command 'sw(itchport) mo(de) ac(cess)'
+- To create the VLAN and name it, use command 'sw(itchport) ac(cess) v(lan) 10'
+
+Configure My VLAN
+- Use the command 'int(erface) range f0/9 - 11, g0/2', to swap the My network.
+- Configure the select interfaces as access ports with command 'sw(itchport) mo(de) ac(cess)'
+- To create the VLAN and name it, use command 'sw(itchport) ac(cess) v(lan) 20'
+
+Configure Sister VLAN
+- Use the command 'int(erface) range f0/17, f0/24', to swap the Sister network.
+- Configure the select interfaces as access ports with command 'sw(itchport) mo(de) ac(cess)'
+- To create the VLAN and name it, use command 'sw(itchport) ac(cess) v(lan) 30'
+
+To change the VLAN names
+- Since it's in Global Configuration mode, run 'do sh(ow) vl(an) br(ief)', and double check that the configuration is correct.
+- Type 'vl(an) 10', enter it, then type 'name PARENT'.
+- Type 'vl(an) 20', enter it, then type 'name MY'.
+- Type 'vl(an) 30', enter it, then type 'name SISTER'.
+- Confirm connectivity by pinging devices across other networks. If devices can ping each other, run 'write' to save running configuration as start-up configuration.
