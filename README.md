@@ -113,7 +113,7 @@ The Sister's network is the smallest so it's the last to be calculated. The netw
 </p>
 
 ### Configure VLANs (Access Ports)
-For this section of the project, the network has been streamlined to the point where all subnets are now sharing the same switch to connect to the router.
+For this section of the project, the network has been streamlined to the point where all subnets are now sharing the same switch to connect to the router. All unused ports have been disabled.
 
 The Fastnet ports have been distributed equally among all three:
 - Parent Network: F0/1 - F0/8
