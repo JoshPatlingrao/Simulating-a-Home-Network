@@ -111,3 +111,21 @@ The Sister's network is the smallest so it's the last to be calculated. The netw
 <p align="center">
   <img src="https://github.com/user-attachments/assets/8167e232-7f86-4d9b-a187-2173b5509e6b">
 </p>
+
+### Configure VLANs (Access Ports)
+For this section of the project, the network has been streamlined to the point where all subnets are now sharing the same switch to connect to the router.
+
+The Fastnet ports have been distributed equally among all three:
+- Parent Network: F0/1 - F0/8
+- My Network: F0/9 - F0/16
+- Sister network : F0/17 - F0/24
+
+Each subnet is connected to the router through these ports:
+- Parent: G0/1(SW) -> G0/0(Router)
+- My: G0/2(SW) -> G0/1(Router)
+- Sister: F024(SW) -> G0/2(Router)
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/78fe24ba-5cfa-4f5e-9087-6d537b73bc19">
+</p>
+
