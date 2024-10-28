@@ -180,4 +180,4 @@ Configure the Router
 - Repeat the steps for other VLANs, using the VLAN codes 20 and 30.
 - Turn off the previously used ports, select those ports with 'int(erface) range g0/1, g0/2'.
 - Run 'shutdown' to disable th eunused ports
-- Run 'write' command to save to start-up configuration.
+- Confirm connectivity by pinging devices across other networks. If devices can ping each other, run 'write' to save running configuration as start-up configuration.
