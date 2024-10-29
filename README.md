@@ -13,7 +13,7 @@ The purpose of this project is to demonstrate my understanding of Cisco Packet T
 - Configuring router IP addresses, interface bandwidth and duplex mode.
 - Disabling unused interface on routers and switches.
 - Using subnetting to efficiently distribute IP addresses among network and host devices.
-- Setting up VLANs using access and trunk ports.
+- Setting up VLANs using access and trunk ports, and comparing the benefits and drawbacks of both methods.
 
 ### Tools Used
 - Cisco Packet Tracer
