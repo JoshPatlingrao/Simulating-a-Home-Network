@@ -168,7 +168,7 @@ Configure the Switch
 - Go into Global Configuration mode and run the command 'int(erface) g0/1' to select the interface.
 - Configure the select interface as a trunk port with command 'sw(itchport) mo(de) tr(unk)'.
 - Configure the VLANs that can use the trunk port, run command 'sw(itchport) tr(unk) all(owed) 10, 20, 30. The 10, 20 and 30 are the VLAN numbers representing the networks.
-- Set native VLAN to 1001, 'sw(itchport) tr(unk) native vlan 1001'.
+- Set native VLAN to an unused VLAN such as 1001, 'sw(itchport) tr(unk) native vlan 1001'. This is to prevent security issues.
 - Turn off the previously used ports, select those ports with 'int(erface) range f0/24, g0/2'.
 - Run 'shutdown' to disable the ports.
 - Run 'write' command to save to start-up configuration.
