@@ -183,4 +183,12 @@ Configure the Router
 - Run 'shutdown' to disable th eunused ports
 - Confirm connectivity by pinging devices across other networks. If devices can ping each other, run 'write' to save running configuration as start-up configuration.
 
-### Comparison: Access Ports vs Trunk Ports
+## Discussion: Access Ports vs Trunk Ports
+Both access and trunk ports allow networks to be separated into VLANs, but both come with their own benefits and caveats.
+
+| Categories | Access Ports | Trunk Ports |
+| --- | --- | --- |
+| Scalability | Using access ports will use up interfaces quickly as more VLANs are set up. Each VLAN will require port but each host device will also require a port to connect to the switch. This will necessitate in buying additional switches as scalability rapidly consumes resources. | Trunk ports are able to adjust to scaleability better as it can combine multiple VLANs into a single interface rather than use an interface for each VLAN. |
+| Complexity | Simple to configure, as each VLAN is assigned to an interface. Each traffic can be isolated. | It's much more complex as each traffic needs to be tagged to ensure it arrives at the correct VLAN. The additional protocols involved in categorizing all the traffic passing through the interface could also introduce vulnerabilities. |
+| Security | Access ports are generally more secure than trunkl ports for its simplicity. | Trunk ports can be misconfigured and introduce vulnerabilities. If the tagging is tampered with or removed then the traffic could be directed automatically to the native LAN instead and allow attackers access to that network. It's always important to set the native VLAN to an unused VLAN to prevent this. |
+| X | X | X |
